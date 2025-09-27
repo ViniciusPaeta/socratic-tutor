@@ -1,0 +1,45 @@
+- id: lin-auto-0
+  type: equation
+  text: Solve for x.
+  prompt: 2*x + 0 = 4
+  target: solve for x
+- id: lin-auto-1
+  type: equation
+  text: Solve for x.
+  prompt: 3*x + 1 = 7
+  target: solve for x
+- id: lin-auto-2
+  type: equation
+  text: Solve for x.
+  prompt: 4*x + 2 = 10
+  target: solve for x
+- id: dist-eq-0
+  type: equation
+  text: Isolate x (distribute if needed).
+  prompt: 2*(x - 1) = 4
+  target: solve for x
+- id: dist-eq-1
+  type: equation
+  text: Isolate x (distribute if needed).
+  prompt: 3*(x - 2) = 9
+  target: solve for x
+- id: dist-eq-2
+  type: equation
+  text: Isolate x (distribute if needed).
+  prompt: 4*(x - 3) = 16
+  target: solve for x
+- id: dist-expr-0
+  type: expression
+  text: Rewrite using the distributive property.
+  prompt: 2*(x+1)
+  target: simplify
+- id: dist-expr-1
+  type: expression
+  text: Rewrite using the distributive property.
+  prompt: 3*(x+1)
+  target: simplify
+- id: dist-expr-2
+  type: expression
+  text: Rewrite using the distributive property.
+  prompt: 4*(x+1)
+  target: simplify

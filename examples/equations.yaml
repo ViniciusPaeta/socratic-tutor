@@ -1,0 +1,17 @@
+- id: lin-001
+  type: equation
+  text: Solve the linear equation for x.
+  prompt: 2*x + 3 = 11
+  target: solve for x
+
+- id: lin-002
+  type: equation
+  text: Isolate x in the equation.
+  prompt: 3*(x - 2) = 9
+  target: solve for x
+
+- id: expr-001
+  type: expression
+  text: Simplify the expression.
+  prompt: 2*(x+1)
+  target: simplify
