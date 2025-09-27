@@ -1,0 +1,20 @@
+# Factorization set (intro). Each problem uses an expression-only prompt.
+# The tutor never reveals the solution; it validates a student's rewrite step-by-step.
+
+- id: fac-001
+  type: expression
+  text: "Factor the expression."
+  prompt: "x^2 + 5*x + 6"
+  target: "simplify"   # 'simplify' meaning: rewrite into an equivalent but factored form
+
+- id: fac-002
+  type: expression
+  text: "Factor completely."
+  prompt: "2*x^2 - 8*x"
+  target: "simplify"
+
+- id: fac-003
+  type: expression
+  text: "Factor a difference of squares."
+  prompt: "9*x^2 - 16"
+  target: "simplify"

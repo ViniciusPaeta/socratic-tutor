@@ -1,0 +1,16 @@
+# Simple linear systems (two equations). MVP note:
+# The tutor currently validates single-step equivalences. Students may perform
+# algebraic elimination or substitution one step at a time. Prompts are presented
+# as strings; students can rewrite one equation per step.
+
+- id: sys-001
+  type: equation
+  text: "Solve the system for x (step-wise)."
+  prompt: "x + y = 7"
+  target: "solve for x"
+
+- id: sys-002
+  type: equation
+  text: "Solve the system for y (step-wise)."
+  prompt: "2*x - y = 3"
+  target: "solve for y"

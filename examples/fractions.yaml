@@ -1,0 +1,20 @@
+# Algebraic fractions: practice safe operations with denominators (watch the domain!).
+# The tutor classifies potential division-by-zero risks.
+
+- id: frac-001
+  type: equation
+  text: "Isolate x without violating domain constraints."
+  prompt: "x/(x-1) = 2"
+  target: "solve for x"
+
+- id: frac-002
+  type: equation
+  text: "Isolate x (rational equation)."
+  prompt: "(x+1)/(2*x) = 3"
+  target: "solve for x"
+
+- id: frac-003
+  type: expression
+  text: "Rewrite as a single rational expression."
+  prompt: "1/(x+1) + 1/(x-1)"
+  target: "simplify"

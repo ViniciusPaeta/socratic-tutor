@@ -34,12 +34,33 @@ def guiding_question(prev: str, curr_attempt: str | None, problem: Problem) -> s
         return "Can you rewrite the expression into an equivalent but simpler form?"
 
 
+def contextual_question(previous: str, reason: str, problem: Problem) -> str:
+    """Return a guiding question tailored to a recent error label."""
+    r = reason.lower()
+    if "sign error" in r:
+        return "Check the sign: when a term crosses '=', should + become - (or vice versa)?"
+    if "moved term without operation" in r:
+        return "If a term crosses '=', which inverse operation on both sides justifies it?"
+    if "division-by-zero risk" in r:
+        return (
+            "When dividing by an expression with variables, which values make the "
+            "denominator zero?"
+        )
+    if "bad distributive" in r:
+        return "Try distributing (or factoring) carefully before combining like terms."
+    if "one-sided operation" in r:
+        return "What operation can you apply to both sides to preserve equality?"
+    if "expressions not equal" in r:
+        return "Can you rewrite using valid identities to keep equivalence?"
+    return guiding_question(previous, None, problem)
+
+
 @dataclass
 class StepFeedback:
     ok: bool
     message: str
     next_question: str
-    solved: bool = False  # NEW: indicate terminal state
+    solved: bool = False  # indicate terminal state
 
 
 class TutorSession:
@@ -79,9 +100,13 @@ class TutorSession:
 
         solved = ok and is_problem_solved(self.problem.target, self.current)
         next_q = (
-            "Nice work — you've reached a solved form for the target. Type 'exit' to finish."
+            "Nice work — solved form reached. Type 'exit' to finish."
             if solved
-            else guiding_question(self.current, attempt, self.problem)
+            else (
+                guiding_question(self.current, attempt, self.problem)
+                if ok
+                else contextual_question(self.current, err_type, self.problem)
+            )
         )
 
         return StepFeedback(

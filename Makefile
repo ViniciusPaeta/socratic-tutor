@@ -26,3 +26,13 @@ api:
 generate:
 	$(PYTHON) -m socratic_tutor.tools.generate --student "$(STUDENT)" --out "$(OUT)"
 	@echo "Example: make generate STUDENT=Paeta OUT=examples/adaptive_Paeta.yaml"
+
+.PHONY: run-fac run-sys run-frac
+run-fac:
+	socratic-tutor --problems examples/factorization.yaml --student "$(USER)"
+
+run-sys:
+	socratic-tutor --problems examples/systems.yaml --student "$(USER)"
+
+run-frac:
+	socratic-tutor --problems examples/fractions.yaml --student "$(USER)"
